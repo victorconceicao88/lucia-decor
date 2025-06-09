@@ -234,11 +234,13 @@ const testimonials = [
               className="max-w-2xl text-center"
             >
               <h1 className="text-3xl md:text-5xl font-light text-white mb-4 md:mb-6 leading-tight">
-                Cortinados <span className="font-medium">Sob Medida</span> <br className="hidden md:block" />para Espaços Exclusivos
+                Cortinados <span className="font-medium">Sob Medida</span>
               </h1>
-              <p className="text-gray-200  mb-6 md:mb-8 leading-relaxed text-base md:text-lg px-4 md:px-0">
-                Elegância discreta e qualidade excepcional. Transforme suas janelas em obras de arte funcional.
-              </p>
+            <p className="text-gray-200 mb-6 md:mb-8 leading-relaxed text-base md:text-lg px-4 md:px-0">
+              Cortinados de alta qualidade, que combinam design e funcionalidade para valorizar o seu espaço.
+            </p>
+
+
               <motion.button 
                 onClick={scrollToContact}
                 whileHover={{ scale: 1.03 }}
