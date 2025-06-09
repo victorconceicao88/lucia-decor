@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { FiScissors, FiUser, FiPhone, FiMail, FiHome, FiArrowRight, FiChevronLeft, FiChevronRight, FiChevronDown } from 'react-icons/fi';
 import { FaQuoteLeft } from 'react-icons/fa';
@@ -30,21 +31,21 @@ const App = () => {
 const testimonials = [
   {
     name: "Ana Silva",
-    role: "Designer de Interiores — Cascais",
+    role: "Cascais",
     content:
       "Os cortinados da Lúcia Decor elevaram os meus projectos a outro nível. A qualidade dos tecidos e o acabamento detalhado dão um toque de sofisticação a qualquer espaço.",
     rating: 5
   },
   {
     name: "Carlos Mendes",
-    role: "Arquiteto — Ericeira",
+    role: "Ericeira",
     content:
       "Colaboro com a Lúcia Decor há vários anos e recomendo sem hesitar. Profissionalismo, atenção ao detalhe e cumprimento rigoroso de prazos.",
     rating: 5
   },
   {
     name: "Isabel Fontes",
-    role: "Cliente Particular — Mafra",
+    role: "Mafra",
     content:
       "O resultado superou as minhas expectativas! As cortinas ficaram perfeitas e fui acompanhada com simpatia e profissionalismo em todas as fases.",
     rating: 5
@@ -196,10 +197,10 @@ const testimonials = [
             transition={{ duration: 0.6 }}
             className="flex items-center space-x-3"
           >
-            <div className="w-8 h-8 bg-black flex items-center justify-center rounded">
-              <FiScissors className="w-4 h-4 text-white" />
-            </div>
-            <h1 className="text-xl font-light tracking-wider">LÚCIA DECOR</h1>
+          <div className="w-32 h-12 bg-white flex items-center justify-center rounded overflow-hidden">
+            <img src="/images/logoldecor.jpg" alt="Lúcia Decor Logo" className="w-auto h-full object-contain" />
+          </div>
+
           </motion.div>
           
           <motion.button 
@@ -235,14 +236,14 @@ const testimonials = [
               <h1 className="text-3xl md:text-5xl font-light text-white mb-4 md:mb-6 leading-tight">
                 Cortinados <span className="font-medium">Sob Medida</span> <br className="hidden md:block" />para Espaços Exclusivos
               </h1>
-              <p className="text-gray-200 mb-6 md:mb-8 leading-relaxed text-base md:text-lg px-4 md:px-0">
+              <p className="text-gray-200  mb-6 md:mb-8 leading-relaxed text-base md:text-lg px-4 md:px-0">
                 Elegância discreta e qualidade excepcional. Transforme suas janelas em obras de arte funcional.
               </p>
               <motion.button 
                 onClick={scrollToContact}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-block border border-white text-white hover:bg-white/10 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm tracking-wider transition-all duration-300"
+                className="inline-block border border-black text-black font-bold hover:bg-white/10 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm tracking-wider transition-all duration-300"
               >
                 Solicite Orçamento
               </motion.button>
@@ -266,7 +267,7 @@ const testimonials = [
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="text-3xl font-light text-gray-800 mb-4"
+                className="text-3xl font-light text-gray-800 font-bold mb-4"
               >
                 O Que Nossos Clientes Dizem
               </motion.h2>
@@ -309,7 +310,7 @@ const testimonials = [
       >
         <div className="md:flex md:items-stretch">
           {/* Texto à esquerda */}
-          <section className="bg-gray-800 text-white px-6 py-12 md:py-20 md:px-12 md:w-1/2 flex flex-col justify-center">
+          <section className="bg-black text-white font-bold px-6 py-12 md:py-20 md:px-12 md:w-1/2 flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-light mb-6" id="orcamento">
               Solicite o Seu Orçamento
             </h2>
@@ -442,7 +443,7 @@ const testimonials = [
                     className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tZG93biI+PHBhdGggZD0ibTYgOSA2IDYgNi02Ii8+PC9zdmc+')] bg-no-repeat bg-[center_right_1rem]"
                     required
                   >
-                    <option value="">Selecione um Tipo</option>
+                    <option value="">--------</option>
                     {fabrics.map((fabric, index) => (
                       <option key={index} value={fabric.name}>{fabric.name}</option>
                     ))}
@@ -455,7 +456,7 @@ const testimonials = [
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-gray-800 hover:bg-gray-700 text-white font-light py-3 px-6 rounded tracking-wider transition-all duration-300 flex items-center justify-center"
+                    className="w-full bg-black hover:bg-gray-700 text-white font-light py-3 px-6 rounded tracking-wider transition-all duration-300 flex items-center justify-center"
                   >
                     {isSubmitting ? (
                       <>
@@ -482,7 +483,7 @@ const testimonials = [
       </main>
 
     {/* Rodapé */}
-<footer className="bg-gray-900 text-gray-400 py-10 md:py-12">
+<footer className="bg-black text-gray-400 py-10 md:py-12">
   <div className="container mx-auto px-6">
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 mb-10 md:mb-12">     
       <div>
@@ -491,6 +492,10 @@ const testimonials = [
           <li className="flex justify-between text-sm md:text-base">
             <span>Segunda - Sexta</span>
             <span>10:00 - 20:00</span>
+          </li>
+          <li className="flex justify-between text-sm md:text-base">
+            <span>Sábado</span>
+            <span>10:00 - 19:00</span>
           </li>
           <li className="flex justify-between text-sm md:text-base">
             <span>Domingo</span>
