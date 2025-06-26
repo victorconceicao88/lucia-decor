@@ -237,47 +237,186 @@ const App = () => {
     }
   };
 
+  // Generate breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Página Inicial",
+        "item": "https://www.luciadecor.pt"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Orçamento",
+        "item": "https://www.luciadecor.pt/orcamento"
+      }
+    ]
+  };
+
   return (
     <div className="font-sans antialiased text-gray-700 bg-gray-50">
       <Helmet>
-        <title>Cortinados sob medida com elegância e qualidade | Lúcia Decor</title>
-        <meta name="description" content="Cortinados personalizados de alta qualidade para sua casa ou projeto. Transforme suas janelas em obras de arte funcional com a Lúcia Decor." />
-        <meta name="keywords" content="cortinados sob medida, cortinas personalizadas, decoração de interiores, cortinados Lisboa, cortinas de qualidade" />
-        <meta property="og:title" content="Cortinados sob medida com elegância e qualidade | Lúcia Decor" />
-        <meta property="og:description" content="Cortinados personalizados de alta qualidade para sua casa ou projeto." />
+        {/* Primary Meta Tags */}
+        <title>Cortinados Sob Medida em Lisboa | Lúcia Decor - Qualidade Premium</title>
+        <meta name="title" content="Cortinados Sob Medida em Lisboa | Lúcia Decor - Qualidade Premium" />
+        <meta name="description" content="Fabricação de cortinados personalizados de alta qualidade para sua casa ou projeto em Lisboa. Transforme suas janelas com os melhores tecidos e acabamentos profissionais." />
+        <meta name="keywords" content="cortinados sob medida, cortinas personalizadas Lisboa, decoração de interiores, cortinados de qualidade, persianas, tecidos para cortinas, orçamento cortinados" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.luciadecor.pt" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.luciadecor.pt" />
+        <meta property="og:url" content="https://www.luciadecor.pt/" />
+        <meta property="og:title" content="Cortinados Sob Medida em Lisboa | Lúcia Decor - Qualidade Premium" />
+        <meta property="og:description" content="Fabricação de cortinados personalizados de alta qualidade para sua casa ou projeto em Lisboa. Transforme suas janelas com os melhores tecidos e acabamentos profissionais." />
+        <meta property="og:image" content="https://www.luciadecor.pt/images/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_PT" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.luciadecor.pt/" />
+        <meta property="twitter:title" content="Cortinados Sob Medida em Lisboa | Lúcia Decor - Qualidade Premium" />
+        <meta property="twitter:description" content="Fabricação de cortinados personalizados de alta qualidade para sua casa ou projeto em Lisboa. Transforme suas janelas com os melhores tecidos e acabamentos profissionais." />
+        <meta property="twitter:image" content="https://www.luciadecor.pt/images/twitter-image.jpg" />
+        
+        {/* Geo and Business Metadata */}
+        <meta name="geo.region" content="PT" />
+        <meta name="geo.placename" content="Mem Martins" />
+        <meta name="geo.position" content="38.7979;-9.3511" />
+        <meta name="ICBM" content="38.7979, -9.3511" />
+        
+        {/* Facebook Domain Verification */}
+        <meta name="facebook-domain-verification" content="your-verification-code" />
+        
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="your-verification-code" />
+        
+        {/* Bing Site Verification */}
+        <meta name="msvalidate.01" content="your-verification-code" />
+        
+        {/* Structured Data */}
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "Lúcia Decor",
-              "image": "",
-              "@id": "",
-              "url": "https://www.luciadecor.pt",
-              "telephone": "+351 219 210 344",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Largo Poço Nº 4",
-                "addressLocality": "Mem Martins",
-                "postalCode": "2725-419",
-                "addressCountry": "PT"
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "name": "Lúcia Decor",
+            "image": "https://www.luciadecor.pt/images/logo.jpg",
+            "@id": "https://www.luciadecor.pt",
+            "url": "https://www.luciadecor.pt",
+            "telephone": "+351 219 210 344",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Largo Poço Nº 4",
+              "addressLocality": "Mem Martins",
+              "postalCode": "2725-419",
+              "addressCountry": "PT"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "38.7979",
+              "longitude": "-9.3511"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "sameAs": [
+              "https://www.facebook.com/luciadecor",
+              "https://www.instagram.com/luciadecor"
+            ]
+          })}
+        </script>
+        
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
+        </script>
+        
+        {/* Local Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Lúcia Decor",
+            "description": "Fabricação de cortinados personalizados de alta qualidade para sua casa ou projeto em Lisboa.",
+            "image": "https://www.luciadecor.pt/images/logo.jpg",
+            "telephone": "+351 219 210 344",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Largo Poço Nº 4",
+              "addressLocality": "Mem Martins",
+              "postalCode": "2725-419",
+              "addressCountry": "PT"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "38.7979",
+              "longitude": "-9.3511"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "priceRange": "$$"
+          })}
+        </script>
+        
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quanto tempo demora a produção de cortinados personalizados?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "O tempo de produção varia conforme a complexidade do projeto, mas geralmente entregamos em 2-3 semanas após aprovação do orçamento."
+                }
               },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
-                ],
-                "opens": "09:00",
-                "closes": "18:00"
+              {
+                "@type": "Question",
+                "name": "Vocês fazem instalação dos cortinados?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim, oferecemos serviço completo que inclui medição, fabricação e instalação profissional em toda a área de Lisboa."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quais tipos de tecidos estão disponíveis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Trabalhamos com uma ampla variedade de tecidos incluindo linho, algodão, seda, blackout e materiais translúcidos, todos de alta qualidade."
+                }
               }
-            }
-          `}
+            ]
+          })}
         </script>
       </Helmet>
 
@@ -291,7 +430,12 @@ const App = () => {
             className="flex items-center space-x-3"
           >
             <div className="w-32 h-12 bg-white flex items-center justify-center rounded overflow-hidden">
-              <img src="/images/logoldecor.jpg" alt="Lúcia Decor Logo" className="w-auto h-full object-contain" />
+              <img 
+                src="/images/logoldecor.jpg" 
+                alt="Lúcia Decor - Cortinados Sob Medida em Lisboa" 
+                className="w-auto h-full object-contain" 
+                loading="lazy"
+              />
             </div>
           </motion.div>
           
@@ -300,6 +444,7 @@ const App = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="border border-gray-400 hover:border-gray-600 px-4 md:px-6 py-2 rounded-full text-sm tracking-wide transition-all duration-300"
+            aria-label="Solicitar orçamento de cortinados personalizados"
           >
             Solicitar Orçamento
           </motion.button>
@@ -314,8 +459,9 @@ const App = () => {
           <div className="absolute inset-0">
             <img
               src="/images/foto.jpeg"
-              alt="Cortinados de luxo sob medida"
+              alt="Cortinados de luxo sob medida em Lisboa pela Lúcia Decor"
               className="w-full h-full object-cover object-center"
+              loading="eager"
             />
           </div>
           
@@ -339,6 +485,7 @@ const App = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+            aria-hidden="true"
           >
             <FiChevronDown className="text-white w-8 h-8" />
           </motion.div>
@@ -367,13 +514,27 @@ const App = () => {
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       className="bg-white p-10 rounded border-2 border-black"
+                      itemScope
+                      itemType="https://schema.org/Review"
                     >
+                      <div itemProp="itemReviewed" itemScope itemType="https://schema.org/LocalBusiness">
+                        <meta itemProp="name" content="Lúcia Decor" />
+                      </div>
+                      <div itemProp="author" itemScope itemType="https://schema.org/Person">
+                        <meta itemProp="name" content={testimonial.name} />
+                      </div>
+                      <meta itemProp="datePublished" content="2023-01-01" />
+                      <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                        <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
+                        <meta itemProp="bestRating" content="5" />
+                      </div>
+                      
                       <FaQuoteLeft className="text-gray-500 w-8 h-8 mb-6 mx-auto" />
-                      <p className="text-gray-700 italic text-center mb-8 leading-relaxed">
+                      <p className="text-gray-700 italic text-center mb-8 leading-relaxed" itemProp="reviewBody">
                         "{testimonial.content}"
                       </p>
                       <div className="text-center">
-                        <h4 className="font-medium text-gray-800">{testimonial.name}</h4>
+                        <h4 className="font-medium text-gray-800" itemProp="author">{testimonial.name}</h4>
                         <p className="text-gray-500 text-sm mb-2">{testimonial.role}</p>
                         {renderStars(testimonial.rating)}
                       </div>
@@ -450,53 +611,60 @@ const App = () => {
                         whileInView={{ opacity: 1 }}
                         onSubmit={handleSubmit}
                         className="space-y-6"
+                        itemScope
+                        itemType="https://schema.org/ContactPage"
                       >
-                        <div>
-                          <label htmlFor="name" className="block mb-2 text-sm font-light text-gray-700">
-                            Nome Completo*
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all"
-                            required
-                            placeholder="Seu nome completo"
-                          />
-                        </div>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div itemScope itemType="https://schema.org/ContactPoint">
                           <div>
-                            <label htmlFor="email" className="block mb-2 text-sm font-light text-gray-700">
-                              E-mail*
+                            <label htmlFor="name" className="block mb-2 text-sm font-light text-gray-700">
+                              Nome Completo*
                             </label>
                             <input
-                              type="email"
-                              id="email"
-                              name="email"
-                              value={formData.email}
+                              type="text"
+                              id="name"
+                              name="name"
+                              value={formData.name}
                               onChange={handleChange}
                               className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all"
                               required
-                              placeholder="seu@email.com"
+                              placeholder="Seu nome completo"
+                              itemProp="name"
                             />
                           </div>
-                          <div>
-                            <label htmlFor="phone" className="block mb-2 text-sm font-light text-gray-700">
-                              Telefone*
-                            </label>
-                            <input
-                              type="tel"
-                              id="phone"
-                              name="phone"
-                              value={formData.phone}
-                              onChange={handleChange}
-                              className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all"
-                              required
-                              placeholder="+351 ..."
-                            />
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                              <label htmlFor="email" className="block mb-2 text-sm font-light text-gray-700">
+                                E-mail*
+                              </label>
+                              <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all"
+                                required
+                                placeholder="seu@email.com"
+                                itemProp="email"
+                              />
+                            </div>
+                            <div>
+                              <label htmlFor="phone" className="block mb-2 text-sm font-light text-gray-700">
+                                Telefone*
+                              </label>
+                              <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all"
+                                required
+                                placeholder="+351 ..."
+                                itemProp="telephone"
+                              />
+                            </div>
                           </div>
                         </div>
                         
@@ -511,6 +679,7 @@ const App = () => {
                                   type="button"
                                   onClick={() => removeWindow(window.id)}
                                   className="absolute top-2 right-2 text-gray-400 hover:text-red-500 transition-colors"
+                                  aria-label={`Remover janela ${index + 1}`}
                                 >
                                   <FiTrash2 className="w-4 h-4" />
                                 </button>
@@ -561,6 +730,7 @@ const App = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             className="flex items-center justify-center w-full border-2 border-dashed border-gray-300 hover:border-gray-400 rounded-lg py-3 px-4 text-sm text-gray-600 hover:text-gray-800 transition-all"
+                            aria-label="Adicionar outra janela"
                           >
                             <FiPlus className="mr-2" />
                             Adicionar outra janela
@@ -598,6 +768,7 @@ const App = () => {
                             className="w-full px-4 py-3 text-sm rounded border border-gray-300 focus:outline-none focus:border-gray-500 transition-all"
                             rows="3"
                             placeholder="Descreva aqui qualquer detalhe adicional, preferências específicas ou dúvidas que queira partilhar connosco. Esta informação ajudará-nos a preparar um orçamento mais preciso e personalizado para as suas necessidades."
+                            itemProp="description"
                           />
                         </div>
 
@@ -648,6 +819,7 @@ const App = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             className="w-full bg-black hover:bg-gray-700 text-white font-light py-3 px-6 rounded tracking-wider transition-all duration-300 flex items-center justify-center"
+                            aria-label="Enviar solicitação de orçamento"
                           >
                             Solicitar Orçamento
                           </motion.button>
