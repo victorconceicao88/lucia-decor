@@ -332,15 +332,6 @@ const App = () => {
               <p className="text-gray-200 mb-6 md:mb-8 leading-relaxed text-base md:text-lg px-4 md:px-0">
                 Cortinados de alta qualidade, que combinam design e funcionalidade para valorizar o seu espaço.
               </p>
-
-              <motion.button 
-                onClick={scrollToContact}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="inline-block border border-white text-white font-bold hover:bg-white/20 px-6 md:px-8 py-2 md:py-3 rounded-full text-sm tracking-wider transition-all duration-300"
-              >
-                Solicite Orçamento
-              </motion.button>
             </motion.div>
           </div>
           
