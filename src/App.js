@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useState } from 'react';
-import { FiScissors, FiUser, FiPhone, FiMail, FiHome, FiArrowRight, FiChevronLeft, FiChevronRight, FiChevronDown, FiPlus, FiTrash2 } from 'react-icons/fi';
+import { FiScissors, FiUser, FiPhone, FiMail, FiHome, FiArrowRight, FiChevronLeft, FiChevronRight, FiChevronDown, FiPlus, FiTrash2 , FiFacebook, FiInstagram,FiClock } from 'react-icons/fi';
 import { FaQuoteLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
@@ -851,70 +851,92 @@ const App = () => {
       </main>
 
       {/* Rodapé */}
-      <footer className="bg-black text-gray-400 py-8 sm:py-10 md:py-12">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 mb-8 sm:mb-10 md:mb-12">     
-            <div>
-              <h4 className="text-xs sm:text-sm font-light text-white mb-4 sm:mb-6 uppercase tracking-wider">Horário</h4>
-              <ul className="space-y-3 sm:space-y-4">
-                <li className="flex justify-between text-xs sm:text-sm">
-                  <span>Segunda - Sexta</span>
-                  <span>09:00 - 18:00</span>
-                </li>
-                <li className="flex justify-between text-xs sm:text-sm">
-                  <span>Sábado</span>
-                  <span>10:00 - 13:00</span>
-                </li>
-                <li className="flex justify-between text-xs sm:text-sm">
-                  <span>Domingo</span>
-                  <span>Encerrado</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xs sm:text-sm font-light text-white mb-4 sm:mb-6 uppercase tracking-wider">Contacto</h4>
-              <ul className="space-y-3 sm:space-y-4">
-                {[
-                  { icon: <FiMail className="w-4 h-4 sm:w-5 sm:h-5" />, text: "lucia_decor@hotmail.com" },
-                  { icon: <FiPhone className="w-4 h-4 sm:w-5 sm:h-5" />, text: "219 210 344" },
-                  { 
-                    icon: <FiHome className="w-4 h-4 sm:w-5 sm:h-5" />, 
-                    text: "Largo Poço Nº 4, 2725-419 Mem Martins",
-                    link: "https://www.google.com/maps/search/?api=1&query=Largo+Poço+Nº+4,+2725-419+MEM+MARTINS"
-                  }
-                ].map((item, index) => (
-                  <motion.li 
-                    key={index}
-                    whileHover={{ x: 5 }}
-                    className="flex items-start text-xs sm:text-sm"
-                  >
-                    <span className="mt-0.5 mr-2 sm:mr-3">{item.icon}</span>
-                    {item.link ? (
-                      <a 
-                        href={item.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="hover:text-white transition-colors break-words"
-                      >
-                        {item.text}
-                      </a>
-                    ) : (
-                      <span className="hover:text-white transition-colors break-words">{item.text}</span>
-                    )}
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
+     <footer className="bg-black text-gray-300 pt-12 pb-6 border-t border-gray-800">
+  <div className="container mx-auto px-5">
+    {/* Conteúdo Principal */}
+    <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
+      
+      {/* Seção Horário */}
+      <div className="flex-1 max-w-xs">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="bg-gray-700 p-2 rounded-lg">
+            <FiClock className="text-white w-5 h-5" />
           </div>
-          
-          <div className="border-t border-gray-800 pt-4 sm:pt-6 text-center text-xs sm:text-sm">
-            <p>
-              &copy; {new Date().getFullYear()} Lúcia Decor. Todos os direitos reservados.
-            </p>
-          </div>
+          <h3 className="text-white font-medium text-sm uppercase tracking-wider">Horário de Funcionamento</h3>
         </div>
-      </footer>
+        <ul className="space-y-2 text-sm">
+          <li className="flex justify-between py-1.5 border-b border-gray-800">
+            <span>Segunda a Sexta</span>
+            <span className="font-medium">10h - 20h</span>
+          </li>
+          <li className="flex justify-between py-1.5 border-b border-gray-800">
+            <span>Sábado</span>
+            <span className="font-medium">10h - 19h</span>
+          </li>
+          <li className="flex justify-between py-1.5">
+            <span>Domingo</span>
+            <span className="text-gray-500">Fechado</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Seção Contato */}
+      <div className="flex-1 max-w-xs">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="bg-gray-700 p-2 rounded-lg">
+            <FiPhone className="text-white w-5 h-5" />
+          </div>
+          <h3 className="text-white font-medium text-sm uppercase tracking-wider">Contacte-nos</h3>
+        </div>
+        <ul className="space-y-3 text-sm">
+          <li className="flex items-center gap-3 hover:text-white transition-colors">
+            <FiMail className="flex-shrink-0 w-4 h-4" />
+            <span>lucia_decor@hotmail.com</span>
+          </li>
+          <li className="flex items-center gap-3 hover:text-white transition-colors">
+            <FiPhone className="flex-shrink-0 w-4 h-4" />
+            <span>219 210 344</span>
+          </li>
+          <li className="flex items-start gap-3 hover:text-white transition-colors">
+            <FiHome className="flex-shrink-0 w-4 h-4 mt-0.5" />
+            <a href="https://goo.gl/maps/example" target="_blank" rel="noopener">
+              Largo Poço Nº4, 2725-419 Mem Martins
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Seção Redes Sociais */}
+      <div className="flex-1 max-w-xs">
+        <div className="flex items-center gap-3 mb-4">
+          <h3 className="text-white font-medium text-sm uppercase tracking-wider">Redes Sociais</h3>
+        </div>
+        <div className="flex gap-4">
+          <a href="https://facebook.com/Luciadecorofficial" 
+             target="_blank"
+             rel="noopener"
+             className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+            <FiFacebook className="w-5 h-5" />
+          </a>
+          <a href="https://instagram.com/luciadecorofficial" 
+             target="_blank"
+             rel="noopener"
+             className="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+            <FiInstagram className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Rodapé Inferior */}
+    <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="text-xs text-gray-500">
+        &copy; {new Date().getFullYear()} Lúcia Decor. Todos os direitos reservados.
+      </div>
+
+    </div>
+  </div>
+</footer>
     </div>
   );
 };
